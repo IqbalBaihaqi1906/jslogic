@@ -11,7 +11,7 @@ function hurufGenap(kata){
     if (typeof kata != "string"){       //jika bukan string maka error
         return "Input bukan string"
     } else {
-        genap = ""
+        let genap = ""
         for (let i = 0; i < kata.length; i++){      
             if (i % 2 == 1){            //kalo nomer indexnya ganjil masukin ke genap
                 genap += kata[i]
@@ -119,22 +119,16 @@ function reverseArr(kata4){
 // "kasur rusak" -> return true
 // "erererrerere" -> return true
 function palindrome(kata5){
-    let reverse = ""
     if (typeof kata5 != "string"){      //jika bukan string maka error
         return "Input bukan string"
     } else {
         if (kata5.length < 2) return false
-        for (let i = kata5.length - 1; i >= 0; i--){       //menggunakan function seperti diatas
-            reverse += kata5[i];      
-        }
-        if (reverse == kata5){                              // kalo hasil kata dibaliknya sama dengan inputan,return true
-            return true
-        } else {
-            return false
-        }
+        if (reverseArr(kata5) === kata5) return true
+        return false
+        
     }
 }
-// console.log(palindrome());
+// console.log(palindrome("katak"));
 
 
 
